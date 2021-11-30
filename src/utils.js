@@ -27,7 +27,7 @@ export const getNextItem = (items: {}[], index: number): ReturnedItem => {
 
 type PathPrefixFunction = ({
   pageNumber: number,
-  numberOfPages: number
+  numberOfPages: number,
 }) => string;
 
 export type PathPrefix = string | PathPrefixFunction;
@@ -63,7 +63,7 @@ export const paginatedPath = (
 
   // Otherwise, add a slash and the number + 1. We add 1 because `pageNumber` is
   // zero indexed, but for human consuption, we want 1 indexed numbers.
-  return `${prefix !== "/" ? prefix : ""}/${pageNumber + 1}`;
+  return `${prefix !== "/" ? prefix : ""}/${pageNumber + 1}/`;
   // NOTE: If `pathPrefix` is a single slash (the index page) then we do not
   // want to output two slashes, so we omit it.
 };
