@@ -58,7 +58,7 @@ export const paginatedPath = (
 
   // If this is page 0, return only the pathPrefix
   if (pageNumber === 0) {
-    return prefix;
+    return `${prefix}/`;
   }
 
   // Otherwise, add a slash and the number + 1. We add 1 because `pageNumber` is
